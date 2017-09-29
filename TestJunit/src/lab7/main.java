@@ -38,22 +38,22 @@ import java.util.Scanner;
 
 public class main {
 	
-	 static void add(ArrayList<music> playlist,String n,String s,int d)
+	 public static void add(ArrayList<music> playlist,String n,String s,int d)
 	{
 		        			
 		playlist.add(new music(n,s,d));
 		System.out.println(playlist.size());
 	}
 
-	static void delete(ArrayList<music> playlist, String del)
+	 public static  void delete(ArrayList<music> playlist, String del)
 	{
-		int k=1;
-		while(k<=playlist.size())
+		int k=0;
+		while(k<playlist.size())
 		{   
 			
-			if(playlist.get(k-1).name.equals(del))
+			if(playlist.get(k).name.equals(del))
 			{
-				playlist.remove(k-1);
+				playlist.remove(k);
 				System.out.println(playlist.size());
 				break;
 			} 
@@ -68,7 +68,7 @@ public class main {
 		}
 	}
 	
-	static void search(ArrayList<music> playlist, String search)
+	 public static void search(ArrayList<music> playlist, String search)
 	{
 		int i=0;
 		while(i<playlist.size())
@@ -90,7 +90,7 @@ public class main {
 		}
 	}
 	
-	static void show(ArrayList<music> playlist)
+	 public static void show(ArrayList<music> playlist)
 	{
 		int l=0;
 		while(l<playlist.size())
@@ -99,6 +99,8 @@ public class main {
 			l++;
 		}
 	}
+	 
+	 public static ArrayList<music> playlist = new ArrayList<music>();
 	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -116,7 +118,7 @@ public class main {
 		
 		boolean exit=true;
 		
-		ArrayList<music> playlist = new ArrayList<music>();
+		
 		
 		  out.writeObject(playlist);  
 		  out.flush();  
